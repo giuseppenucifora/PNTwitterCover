@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PNTwitterCover'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'PNTwitterCover is a UUIscrollView Category to add blur and zoom during scroll bounce'
 
 # This description is used to generate tags and improve search results.

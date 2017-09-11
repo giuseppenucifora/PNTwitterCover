@@ -34,6 +34,10 @@ static char UIScrollViewTwitterCover;
     [self addTwitterCoverWithImage:image withTopView:topView width:[UIScreen mainScreen].bounds.size.width andHeight:DefaultTwitterCoverViewHeight];
 }
 
+- (void)addTwitterCoverWithImage:(UIImage*)image withTopView:(UIView*)topView andHeight:(CGFloat) height {
+    [self addTwitterCoverWithImage:image withTopView:topView width:[UIScreen mainScreen].bounds.size.width andHeight:height];
+}
+
 - (void)addTwitterCoverWithImage:(UIImage*)image withTopView:(UIView*)topView width:(CGFloat) width andHeight:(CGFloat) height
 {
     PNTwitterCoverView *view = [[PNTwitterCoverView alloc] initWithFrame:CGRectMake(0,0, width, height) andContentTopView:topView];

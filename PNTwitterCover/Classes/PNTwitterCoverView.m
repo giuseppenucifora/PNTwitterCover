@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSMutableArray *blurImages;
 @property (nonatomic, strong) UIView *topView;
 @property (nonatomic) CGFloat height;
+@property (nonatomic) CGFloat width;
 @end
 
 
@@ -32,6 +33,7 @@
         _blurImages = [[NSMutableArray alloc] initWithCapacity:20];
         _topView = view;
         _height = frame.size.height;
+        _width = frame.size.width;
     }
     return self;
 }
@@ -75,9 +77,9 @@
     if (self.scrollView.contentOffset.y < 0) {
         
         CGFloat offset = -self.scrollView.contentOffset.y;
-        _topView.frame = CGRectMake(0, -offset, 320, _topView.bounds.size.height);
+        _topView.frame = CGRectMake(0, -offset, _width, _topView.bounds.size.height);
         
-        self.frame = CGRectMake(-offset,-offset + _topView.bounds.size.height, 320+ offset * 2, _height + offset);
+        self.frame = CGRectMake(-offset,-offset + _topView.bounds.size.height, _width+ offset * 2, _height + offset);
         NSInteger index = offset / 10;
         if (index < 0) {
             index = 0;
@@ -92,9 +94,9 @@
         
     }
     else {
-        _topView.frame = CGRectMake(0, 0, 320, _topView.bounds.size.height);
+        _topView.frame = CGRectMake(0, 0, _width, _topView.bounds.size.height);
         
-        self.frame = CGRectMake(0,_topView.bounds.size.height, 320, _height);
+        self.frame = CGRectMake(0,_topView.bounds.size.height, _width, _height);
         UIImage *image = _blurImages[0];
         
         if (self.image != image) {

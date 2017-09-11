@@ -16,6 +16,7 @@
 
 - (void)addTwitterCoverWithImage:(UIImage*)image;
 - (void)addTwitterCoverWithImage:(UIImage*)image withTopView:(UIView*)topView;
+- (void)addTwitterCoverWithImage:(UIImage*)image withTopView:(UIView*)topView andHeight:(CGFloat) height;
 - (void)addTwitterCoverWithImage:(UIImage*)image withTopView:(UIView*)topView width:(CGFloat) width andHeight:(CGFloat) height;
 - (void)removeTwitterCoverView;
 
