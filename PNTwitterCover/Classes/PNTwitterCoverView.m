@@ -50,10 +50,13 @@
 {
     CGFloat factor = 0.1;
     [_blurImages addObject:self.image];
-    for (NSUInteger i = 0; i < 20; i++) {
-        [_blurImages addObject:[self.image boxblurImageWithBlur:factor]];
-        factor+=0.04;
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        CGFloat factor = 0.1;
+        for (NSUInteger i = 0; i < 20; i++) {
+            [_blurImages addObject:[self.image boxblurImageWithBlur:factor]];
+            factor+=0.04;
+        }
+    });
 }
 
 - (void)setScrollView:(UIScrollView *)scrollView
