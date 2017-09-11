@@ -48,7 +48,7 @@
 
 - (void)prepareForBlurImages
 {
-    CGFloat factor = 0.1;
+    
     [_blurImages addObject:self.image];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         CGFloat factor = 0.1;
